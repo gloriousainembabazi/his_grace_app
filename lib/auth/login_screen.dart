@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../widgets/custom_text_form_field.dart';
-import '../utils/logo_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -41,10 +40,40 @@ class LoginScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 20),
-                const Center(
-                  child: LogoWidget(
-                    size: 80,
-                    withBackground: true,
+                // Real Logo Section
+                Center(
+                  child: Container(
+                    width: 120,
+                    height: 120,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.3),
+                          blurRadius: 10,
+                          offset: const Offset(0, 5),
+                        ),
+                      ],
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        'assets/images/logo2.jpg', // Make sure this path is correct
+                        fit: BoxFit.contain,
+                        errorBuilder: (context, error, stackTrace) {
+                          // Fallback if image fails to load
+                          return Container(
+                            color: Colors.grey[200],
+                            child: const Icon(
+                              Icons.medical_services,
+                              size: 50,
+                              color: Colors.blue,
+                            ),
+                          );
+                        },
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 30),

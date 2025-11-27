@@ -47,18 +47,46 @@ class RegistrationScreenState extends State<RegistrationScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 20),
-                Text(
-                  'Create Account',
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                        fontWeight: FontWeight.bold,
+                
+                // Illustration Section
+                Center(
+                  child: Container(
+                    width: 120,
+                    height: 120,
+                    decoration: BoxDecoration(
+                      color: Colors.blue.withOpacity(0.1),
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Colors.blue.withOpacity(0.3),
+                        width: 2,
                       ),
+                    ),
+                    child: const Icon(
+                      Icons.person_add_alt_1,
+                      size: 60,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                
+                Center(
+                  child: Text(
+                    'Create Account',
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
                 ),
                 const SizedBox(height: 10),
-                Text(
-                  'Fill in your details to create an account',
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Colors.grey.shade600,
-                      ),
+                Center(
+                  child: Text(
+                    'Fill in your details to create an account',
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          color: Colors.grey.shade600,
+                        ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
                 const SizedBox(height: 30),
                 CustomTextFormField(
@@ -158,6 +186,8 @@ class RegistrationScreenState extends State<RegistrationScreen> {
                   onPressed: _register,
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(double.infinity, 50),
+                    backgroundColor: Colors.blue,
+                    foregroundColor: Colors.white,
                   ),
                   child: const Text('Create Account'),
                 ),

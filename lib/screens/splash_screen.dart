@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../utils/logo_widget.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,7 +15,7 @@ class SplashScreenState extends State<SplashScreen> {
   }
 
   _navigateToOnboarding() async {
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 5));
     if (!mounted) return;
     Navigator.pushReplacementNamed(context, '/onboarding');
   }
@@ -29,9 +28,38 @@ class SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const LogoWidget(
-              size: 120,
-              withBackground: true,
+            // Real business logo
+            Container(
+              width: 150,
+              height: 150,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(25),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    blurRadius: 15,
+                    offset: const Offset(0, 5),
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(25),
+                child: Image.asset(
+                  'assets/images/logo2.jpg',
+                  fit: BoxFit.contain,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Container(
+                      color: Colors.grey[200],
+                      child: const Icon(
+                        Icons.medical_services,
+                        size: 60,
+                        color: Colors.blue,
+                      ),
+                    );
+                  },
+                ),
+              ),
             ),
             const SizedBox(height: 30),
             Text(

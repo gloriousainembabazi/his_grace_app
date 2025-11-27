@@ -22,6 +22,7 @@ class HisGraceDrugshopApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        useMaterial3: true,
       ),
       home: const SplashScreen(),
       debugShowCheckedModeBanner: false,

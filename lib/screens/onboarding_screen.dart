@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../utils/logo_widget.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -17,22 +16,26 @@ class OnboardingScreenState extends State<OnboardingScreen> {
       title: 'Welcome to His Grace Drugshop',
       description: 'Discover amazing features that will help\nyou manage your pharmacy efficiently.',
       image: Icons.medical_services,
+      color: Colors.blue,
     ),
     OnboardingPage(
       title: 'Easy Management',
       description: 'Streamline your pharmacy operations with our\nintuitive tools and features.',
       image: Icons.medication,
+      color: Colors.green,
     ),
     OnboardingPage(
       title: 'Get Started',
       description: 'Join trusted pharmacies using\nHis Grace Drugshop to grow their business.',
       image: Icons.rocket_launch,
+      color: Colors.orange,
     ),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
@@ -144,11 +147,13 @@ class OnboardingPage {
   final String title;
   final String description;
   final IconData image;
+  final Color color;
 
   OnboardingPage({
     required this.title,
     required this.description,
     required this.image,
+    required this.color,
   });
 }
 
@@ -167,25 +172,22 @@ class OnboardingPageWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Logo/Icon
+          // Illustration container
           Container(
-            width: 120,
-            height: 120,
+            width: 200,
+            height: 200,
             decoration: BoxDecoration(
-              color: Colors.blue.shade50,
-              borderRadius: BorderRadius.circular(30),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  blurRadius: 10,
-                  spreadRadius: 2,
-                ),
-              ],
+              color: page.color.withOpacity(0.1),
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: page.color.withOpacity(0.3),
+                width: 2,
+              ),
             ),
             child: Icon(
               page.image,
-              size: 60,
-              color: Colors.blue,
+              size: 80,
+              color: page.color,
             ),
           ),
           const SizedBox(height: 40),
@@ -193,10 +195,10 @@ class OnboardingPageWidget extends StatelessWidget {
           // Title
           Text(
             page.title,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Colors.blue,
+              color: page.color,
             ),
             textAlign: TextAlign.center,
           ),

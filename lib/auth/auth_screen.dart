@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../utils/logo_widget.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
@@ -13,9 +12,39 @@ class AuthScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const LogoWidget(
-                size: 100,
-                withBackground: true,
+              // Real Logo Section
+              Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.3),
+                      blurRadius: 10,
+                      offset: const Offset(0, 5),
+                    ),
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                    'assets/images/logo2.jpg', // Make sure this path is correct
+                    fit: BoxFit.contain,
+                    errorBuilder: (context, error, stackTrace) {
+                      // Fallback if image fails to load
+                      return Container(
+                        color: Colors.grey[200],
+                        child: const Icon(
+                          Icons.medical_services,
+                          size: 50,
+                          color: Colors.blue,
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ),
               const SizedBox(height: 30),
               Text(
