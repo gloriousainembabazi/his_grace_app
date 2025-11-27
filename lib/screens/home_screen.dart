@@ -270,11 +270,13 @@ class HomeScreenState extends State<HomeScreen> {
 
 // Inventory Page
 class InventoryPage extends StatelessWidget {
+  const InventoryPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Inventory Management'),
+        title: const Text('Inventory Management'),
         backgroundColor: Colors.green,
         foregroundColor: Colors.white,
       ),
@@ -288,14 +290,14 @@ class InventoryPage extends StatelessWidget {
             _buildInfoCard('Low Stock Items', '12', Icons.warning, color: Colors.orange),
             _buildInfoCard('Out of Stock', '3', Icons.error, color: Colors.red),
             
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _buildSectionHeader('Quick Actions'),
             Row(
               children: [
                 Expanded(
                   child: _buildActionButton('Add Product', Icons.add, Colors.green),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Expanded(
                   child: _buildActionButton('Stock Take', Icons.checklist, Colors.blue),
                 ),
@@ -310,11 +312,13 @@ class InventoryPage extends StatelessWidget {
 
 // Sales Page
 class SalesPage extends StatelessWidget {
+  const SalesPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sales Management'),
+        title: const Text('Sales Management'),
         backgroundColor: Colors.orange,
         foregroundColor: Colors.white,
       ),
@@ -326,15 +330,15 @@ class SalesPage extends StatelessWidget {
             _buildSalesCard('This Week', '\$8,765.20', Icons.calendar_today),
             _buildSalesCard('This Month', '\$32,189.75', Icons.calendar_month),
             
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton.icon(
               onPressed: () {},
-              icon: Icon(Icons.add_shopping_cart),
-              label: Text('New Sale'),
+              icon: const Icon(Icons.add_shopping_cart),
+              label: const Text('New Sale'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.orange,
                 foregroundColor: Colors.white,
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               ),
             ),
           ],
@@ -346,16 +350,18 @@ class SalesPage extends StatelessWidget {
 
 // Customers Page
 class CustomersPage extends StatelessWidget {
+  const CustomersPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Customer Management'),
+        title: const Text('Customer Management'),
         backgroundColor: Colors.purple,
         foregroundColor: Colors.white,
       ),
       body: ListView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         children: [
           _buildCustomerTile('John Doe', 'Regular Customer', '+1234567890'),
           _buildCustomerTile('Jane Smith', 'Credit Customer', '+1234567891'),
@@ -366,7 +372,7 @@ class CustomersPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.purple,
-        child: Icon(Icons.person_add),
+        child: const Icon(Icons.person_add),
       ),
     );
   }
@@ -374,11 +380,13 @@ class CustomersPage extends StatelessWidget {
 
 // Reports Page
 class ReportsPage extends StatelessWidget {
+  const ReportsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Reports & Analytics'),
+        title: const Text('Reports & Analytics'),
         backgroundColor: Colors.red,
         foregroundColor: Colors.white,
       ),
@@ -399,16 +407,18 @@ class ReportsPage extends StatelessWidget {
 
 // History Page
 class HistoryPage extends StatelessWidget {
+  const HistoryPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Transaction History'),
+        title: const Text('Transaction History'),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
       ),
       body: ListView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         children: [
           _buildHistoryItem('Sale #001', '\$45.50', 'Today, 10:30 AM', Icons.shopping_cart),
           _buildHistoryItem('Sale #002', '\$120.25', 'Today, 11:15 AM', Icons.shopping_cart),
@@ -422,11 +432,13 @@ class HistoryPage extends StatelessWidget {
 
 // Credits Page
 class CreditsPage extends StatelessWidget {
+  const CreditsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Credit Management'),
+        title: const Text('Credit Management'),
         backgroundColor: Colors.teal,
         foregroundColor: Colors.white,
       ),
@@ -439,8 +451,8 @@ class CreditsPage extends StatelessWidget {
             _buildCreditSummary('Pending Payments', '\$1,230.50'),
             _buildCreditSummary('Overdue', '\$450.25', isOverdue: true),
             
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               'Credit Customers:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
@@ -455,11 +467,13 @@ class CreditsPage extends StatelessWidget {
 
 // Expenses Page
 class ExpensesPage extends StatelessWidget {
+  const ExpensesPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Expense Tracking'),
+        title: const Text('Expense Tracking'),
         backgroundColor: Colors.amber,
         foregroundColor: Colors.black,
       ),
@@ -470,7 +484,7 @@ class ExpensesPage extends StatelessWidget {
             _buildExpenseSummary('Monthly Expenses', '\$1,850.75'),
             _buildExpenseSummary('Today\'s Expenses', '\$125.00'),
             
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _buildExpenseCategory('Supplies', '\$450.00', Icons.inventory),
             _buildExpenseCategory('Utilities', '\$280.50', Icons.bolt),
             _buildExpenseCategory('Salaries', '\$900.00', Icons.people),
@@ -481,7 +495,7 @@ class ExpensesPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.amber,
-        child: Icon(Icons.add, color: Colors.black),
+        child: const Icon(Icons.add, color: Colors.black),
       ),
     );
   }
@@ -489,16 +503,18 @@ class ExpensesPage extends StatelessWidget {
 
 // Settings Page
 class SettingsPage extends StatelessWidget {
+  const SettingsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: const Text('Settings'),
         backgroundColor: Colors.grey,
         foregroundColor: Colors.white,
       ),
       body: ListView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         children: [
           _buildSettingItem('Business Profile', Icons.business),
           _buildSettingItem('User Management', Icons.people),
@@ -519,7 +535,7 @@ Widget _buildSectionHeader(String title) {
     padding: const EdgeInsets.symmetric(vertical: 8.0),
     child: Text(
       title,
-      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
     ),
   );
 }
@@ -529,7 +545,7 @@ Widget _buildInfoCard(String title, String value, IconData icon, {Color color = 
     child: ListTile(
       leading: Icon(icon, color: color),
       title: Text(title),
-      trailing: Text(value, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+      trailing: Text(value, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
     ),
   );
 }
@@ -551,7 +567,7 @@ Widget _buildSalesCard(String period, String amount, IconData icon) {
     child: ListTile(
       leading: Icon(icon, color: Colors.orange),
       title: Text(period),
-      trailing: Text(amount, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.green)),
+      trailing: Text(amount, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.green)),
     ),
   );
 }
@@ -559,10 +575,10 @@ Widget _buildSalesCard(String period, String amount, IconData icon) {
 Widget _buildCustomerTile(String name, String type, String phone) {
   return Card(
     child: ListTile(
-      leading: CircleAvatar(child: Icon(Icons.person)),
+      leading: const CircleAvatar(child: Icon(Icons.person)),
       title: Text(name),
       subtitle: Text('$type • $phone'),
-      trailing: Icon(Icons.arrow_forward_ios),
+      trailing: const Icon(Icons.arrow_forward_ios),
     ),
   );
 }
@@ -572,7 +588,7 @@ Widget _buildReportItem(String title, IconData icon) {
     child: ListTile(
       leading: Icon(icon, color: Colors.red),
       title: Text(title),
-      trailing: Icon(Icons.download),
+      trailing: const Icon(Icons.download),
     ),
   );
 }
@@ -583,7 +599,7 @@ Widget _buildHistoryItem(String transaction, String amount, String time, IconDat
       leading: Icon(icon, color: Colors.blue),
       title: Text(transaction),
       subtitle: Text(time),
-      trailing: Text(amount, style: TextStyle(fontWeight: FontWeight.bold)),
+      trailing: Text(amount, style: const TextStyle(fontWeight: FontWeight.bold)),
     ),
   );
 }
@@ -607,10 +623,10 @@ Widget _buildCreditSummary(String title, String amount, {bool isOverdue = false}
 Widget _buildCreditCustomer(String name, String amount, String dueDate) {
   return Card(
     child: ListTile(
-      leading: CircleAvatar(child: Icon(Icons.person)),
+      leading: const CircleAvatar(child: Icon(Icons.person)),
       title: Text(name),
       subtitle: Text(dueDate),
-      trailing: Text(amount, style: TextStyle(fontWeight: FontWeight.bold)),
+      trailing: Text(amount, style: const TextStyle(fontWeight: FontWeight.bold)),
     ),
   );
 }
@@ -618,8 +634,8 @@ Widget _buildCreditCustomer(String name, String amount, String dueDate) {
 Widget _buildExpenseSummary(String title, String amount) {
   return Card(
     child: ListTile(
-      title: Text(title, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-      trailing: Text(amount, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.red)),
+      title: Text(title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+      trailing: Text(amount, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.red)),
     ),
   );
 }
@@ -629,7 +645,7 @@ Widget _buildExpenseCategory(String category, String amount, IconData icon) {
     child: ListTile(
       leading: Icon(icon, color: Colors.amber),
       title: Text(category),
-      trailing: Text(amount, style: TextStyle(fontWeight: FontWeight.bold)),
+      trailing: Text(amount, style: const TextStyle(fontWeight: FontWeight.bold)),
     ),
   );
 }
@@ -639,7 +655,7 @@ Widget _buildSettingItem(String title, IconData icon) {
     child: ListTile(
       leading: Icon(icon),
       title: Text(title),
-      trailing: Icon(Icons.arrow_forward_ios),
+      trailing: const Icon(Icons.arrow_forward_ios),
     ),
   );
 }

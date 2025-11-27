@@ -14,7 +14,7 @@ class VerificationScreenState extends State<VerificationScreen> {
 
   void _verifyCode() {
     String code = _controllers.map((controller) => controller.text).join();
-    if (code.length == 4) {
+    if (code.length == 6) {
       // Navigate to main app
       Navigator.pushReplacementNamed(context, '/home');
     }
